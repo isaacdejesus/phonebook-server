@@ -37,7 +37,7 @@ app.delete('/api/records/:id', (request, response, next) => {
         })
         .catch(error => next(error))
 })
-app.post('/api/records', (request, response) => {
+app.post('/api/records', (request, response, next) => {
     const body = request.body
     if(body.name === undefined|| body.number ===undefined){
         return response.status(400).json({
